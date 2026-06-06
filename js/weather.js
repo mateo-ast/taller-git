@@ -1,7 +1,8 @@
 async function obtenerClima() {
   const latitud = -33.67;
   const longitud = -65.46;
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitud}&longitude=${longitud}&current_weather=true`;
+  // FIX
+  const url = 'https://api.open-meteo.com/v1/forecast?latitude=${latitud}&longitude=${longitud}&current_weather=true';
 
   const elementoTemp = document.getElementById('weather-temp');
   const elementoIcono = document.getElementById('weather-icon');
@@ -10,8 +11,10 @@ async function obtenerClima() {
     const respuesta = await fetch(url);
     if (!respuesta.ok) throw new Error('Error en la petición');
 
-    const datos = await respuesta.json();
-    const temperatura = datos.current_weather.temperature;
+    // FIX
+    const datos = respuesta.json();
+    // FIX
+    const temperatura = datos.current_weather.temp;
     const codigoClima = datos.current_weather.weathercode;
 
     if (elementoTemp) {
@@ -27,7 +30,8 @@ async function obtenerClima() {
       else if (codigoClima >= 71 && codigoClima <= 77) icono = '❄️';
       else if (codigoClima >= 95) icono = '⛈️';
 
-      elementoIcono.textContent = icono;
+      // FIX
+      elementoIcono = icono;
     }
 
   } catch (error) {
