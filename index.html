@@ -6,11 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Semana de la Ingeniería - UNViMe</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
+  <script src="app.js" defer></script>
+  <script src="js/clock.js" defer></script>
+  <script src="js/weather.js" defer></script>
 </head>
 
 <body>
-  <header id="cabecera">
+  <header>
+    <div id="weather-container">
+      <span id="weather-icon">⏳</span>
+      <span id="weather-temp">Cargando...</span>
+    </div>
+    <div id="cabecera"></div>
+    <div id="clock-container">
+      <span id="live-clock">--:--:--</span>
+    </div>
   </header>
 
   <main>
