@@ -1,0 +1,15 @@
+:root {
+  --theme-primary: #5c2d91;
+  --theme-lighter: #e8d0fe;
+  --neutral-primary: #323130;
+  --neutral-secondary: #605e5c;
+  --neutral-tertiary: #a19f9d;
+  --neutral-lighter: #faf9f8;
+  --neutral-light: #edebe9;
+  --white: #ffffff;
+
+  --elevation-4: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.13), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.11);
+  --elevation-8: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.13), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.11);
+
+  --border-radius: 6px;
+}

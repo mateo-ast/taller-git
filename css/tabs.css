@@ -1,0 +1,89 @@
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+input[name="program-tabs"] {
+  display: none;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--neutral-light);
+  padding-left: 0.5rem;
+}
+
+.tab-label {
+  padding: 0.5rem 0.2rem;
+  color: var(--neutral-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab-label:hover {
+  color: var(--neutral-primary);
+}
+
+#tab-lunes:checked~.tab-nav label[for="tab-lunes"],
+#tab-martes:checked~.tab-nav label[for="tab-martes"] {
+  color: var(--neutral-primary);
+  font-weight: 600;
+  border-bottom-color: var(--theme-primary);
+}
+
+.tab-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  padding-bottom: 2rem;
+  padding-left: 0.2rem;
+}
+
+.tab-content-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tab-content-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-content-wrapper::-webkit-scrollbar-thumb {
+  background: var(--neutral-tertiary);
+  border-radius: 4px;
+}
+
+.tab-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-secondary);
+}
+
+.tab-content {
+  display: none;
+  animation: fluentFade 0.2s ease-out forwards;
+}
+
+#tab-lunes:checked~.tab-content-wrapper #content-lunes,
+#tab-martes:checked~.tab-content-wrapper #content-martes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@keyframes fluentFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
